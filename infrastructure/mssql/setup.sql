@@ -10,19 +10,10 @@ GO
 -- UserInfos Table Create SQL
 CREATE TABLE UserInfos
 (
-    UserInfoId  int        NOT NULL    IDENTITY, 
-    EmpNo       char(5)    NULL, 
-    CmpCode     char(2)    NULL, 
-    CONSTRAINT PK_UserInfo PRIMARY KEY (UserInfoId)
+    Id  varchar(30)  NOT NULL    IDENTITY, 
+    Json    json    NULL, 
+    CONSTRAINT PK_UserInfo PRIMARY KEY (Id)
 )
-GO
-
-CREATE INDEX IX_UserInfo_1
-    ON UserInfos(EmpNo, CmpCode)
-GO
-
-CREATE UNIQUE INDEX UQ_UserInfo_1
-    ON UserInfos(EmpNo, CmpCode)
 GO
 
 
